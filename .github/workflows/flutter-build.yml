@@ -1218,6 +1218,8 @@ jobs:
       reltype: release
       x86_target: "" # can be ",android-x86"
       suffix: ""
+      _JAVA_OPTIONS: "-Xmx4g"
+      GRADLE_OPTS: "-Dorg.gradle.jvmargs=-Xmx4g -Dorg.gradle.daemon=false"
     steps:
       - name: Free Disk Space (Ubuntu)
         uses: jlumbroso/free-disk-space@main
