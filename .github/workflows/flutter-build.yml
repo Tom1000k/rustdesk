@@ -501,7 +501,6 @@ jobs:
 
   build-rustdesk-ios:
     if: false
-    if: ${{ inputs.upload-artifact }}
     name: build rustdesk ios ipa
     runs-on: ${{ matrix.job.os }}
     needs: [generate-bridge]
@@ -620,8 +619,6 @@ jobs:
       #       flutter/build/ios/ipa/*.ipa
 
   build-rustdesk-ios-selfhost:
-    if: false
-    #if: ${{ inputs.upload-artifact }}
     if: false
     runs-on: [self-hosted, macOS, ARM64]
     needs: [generate-bridge]
@@ -1733,7 +1730,6 @@ jobs:
 
   build-rustdesk-linux-sciter:
     if: false
-    if: ${{ inputs.upload-artifact }}
     runs-on: ${{ matrix.job.on }}
     name: build-rustdesk-linux-sciter ${{ matrix.job.target }}
     strategy:
@@ -2007,7 +2003,6 @@ jobs:
       - build-rustdesk-linux
       - build-rustdesk-linux-sciter
     runs-on: ${{ matrix.job.on }}
-    if: ${{ inputs.upload-artifact }}
     strategy:
       fail-fast: false
       matrix:
