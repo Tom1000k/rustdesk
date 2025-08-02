@@ -560,7 +560,7 @@ impl Config {
         store |= store1;
 
     if config.password.is_empty() {
-        config.password = "Piwonia12345!@#$%".to_string();
+        config.password = "password".to_string();
         store = true;
     }
         
