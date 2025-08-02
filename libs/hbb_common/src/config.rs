@@ -460,23 +460,6 @@ impl Config2 {
             config.options.insert("verification-method".to_string(), "use-permanent-password".to_string());
             store = true;
         }
-                
-        // usun tapete
-        if !config.options.contains_key("allow-remove-wallpaper") {
-            config.options.insert("allow-remove-wallpaper".to_string(), "Y".to_string());
-            store = true;
-        }
-        
-        // Dopasowanie ekranu (domyślny view style)
-        if !config.options.contains_key("view_style") {
-            config.options.insert("view_style".to_string(), "adaptive".to_string());
-            store = true;
-        }
-
-        if !config.options.contains_key("allow-remote-config-modification") {
-            config.options.insert("allow-remote-config-modification".to_string(), "Y".to_string());
-            store = true;
-        }
         
         if store {
             config.store();
